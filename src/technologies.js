@@ -7,6 +7,6 @@ const Technologies = () => {
         <li>react</li>
       </ul>
     );
-  }
+  }s
 
 export default Technologies;

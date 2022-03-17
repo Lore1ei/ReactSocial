@@ -1,7 +1,67 @@
-ul li{
-  list-style-type: georgian;
+.app-wrapper{
+  display: grid;
+  grid-template-areas: 
+  "h h"
+  "n c";
+  grid-template-rows: 60px 2fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.img{
-  width: 200px;
+img{
+  max-width: 100%;
+}
+
+.header{
+  grid-area: h;
+  background: linear-gradient(90deg, rgba(40,44,82,1) 18%, rgba(0,212,255,1) 100%, rgba(2,0,36,1) 100%);
+  padding: 4px;
+}
+
+.header img{
+  width: 55px;
+}
+
+.nav{
+  grid-area: n;
+  background-color:bisque;
+}
+
+nav ul{
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+nav ul a{
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-left: 6px;
+  color: #444;
+  transition: all 0.4s;
+}
+
+nav ul a:hover{
+  color: red;
+}
+
+.ava-description{
+  display: flex;
+  align-items: center;
+}
+
+.ava-description img{
+  margin-right: 10px;
+}
+
+.content{
+  grid-area: c;
+  background-color: burlywood;
+}
+
+.ava-description img{
+  width: 100px;
 }

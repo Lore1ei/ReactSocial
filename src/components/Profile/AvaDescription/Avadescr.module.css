@@ -1,0 +1,22 @@
+.ava_description{
+  display: flex;
+  align-items: center;
+}
+
+.ava_description img{
+  margin-right: 10px;
+}
+
+.content{
+  grid-area: c;
+  background-color: burlywood;
+}
+
+.ava_description img{
+  width: 100px;
+}
+
+
+.ava_description {
+  padding: 10px;
+}

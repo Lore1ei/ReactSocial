@@ -1,0 +1,11 @@
+.header{
+    grid-area: h;
+    background: linear-gradient(90deg, rgba(40,44,82,1) 18%, rgba(0,212,255,1) 100%, rgba(2,0,36,1) 100%);
+    padding: 4px;
+  }
+  
+.header img{
+    width: 55px;
+}
+
+ 

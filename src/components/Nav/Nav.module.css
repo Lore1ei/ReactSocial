@@ -1,0 +1,27 @@
+.nav{
+  grid-area: n;
+  background-color:bisque;
+}
+
+.nav .ul{
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.nav .ul .a{
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-left: 6px;
+  color: #444;
+  transition: all 0.4s;
+}
+
+.nav .ul .a:hover{
+  color: red;
+}
+
+a.active{
+  color: red !important;
+}

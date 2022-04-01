@@ -1,19 +1,23 @@
-.app-wrapper{
-  display: grid;
-  grid-template-areas: 
+.app-wrapper {
+    display: grid;
+    grid-template-areas:
   "h h"
   "n c";
-  grid-template-rows: 60px 2fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
+    grid-template-rows: 60px 2fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-img{
-  max-width: 100%;
+img {
+    max-width: 100%;
+}
+
+.app-wrapper-content {
+  background: #f4f4f4;
 }
 
 *:focus {
-  outline: none;
+    outline: none;
 }

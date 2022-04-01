@@ -1,0 +1,32 @@
+.dialogs{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems{
+
+}
+
+
+.dialog{
+    color: #444444;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.dialog.active{
+    color: red;
+}
+
+.messages{
+    margin-left: 10px;
+}
+
+.message{
+    max-width: 300px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 6px;
+    margin-bottom: 8px;
+}

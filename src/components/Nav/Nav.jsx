@@ -1,25 +1,23 @@
 import s from './Nav.module.css';
 import {NavLink} from "react-router-dom";
 
+const NavA = (props) => {
+  return(
+      <li>
+          <NavLink className= { navData => navData.isActive ? s.active : s.item } to={props.path} activeClassName={s.active}>{props.title}</NavLink>
+      </li>
+  );
+}
+
 const Nav = () => {
     return(
         <nav className={s.nav}>
           <ul className={s.ul}>
-            <li>
-                <NavLink className= { navData => navData.isActive ? s.active : s.item } to="/" activeClassName={s.active}>Profile</NavLink>
-            </li>
-            <li>
-                <NavLink className= { navData => navData.isActive ? s.active : s.item } to="/dialogs" activeClassName={s.active}>Messages</NavLink>
-            </li>
-            <li>
-                <NavLink className= { navData => navData.isActive ? s.active : s.item } to="/news" activeClassName={s.active}>News</NavLink>
-            </li>
-            <li>
-                <NavLink className= { navData => navData.isActive ? s.active : s.item } to="/music" activeClassName={s.active}>Music</NavLink>
-            </li>
-            <li>
-                <NavLink className={navData => navData.isActive ? s.active : s.item} to='/settings' activeClassName={s.active}>Settings</ NavLink>
-            </li>
+                <NavA path='/' title='Profile'/>
+                <NavA path='/dialogs' title='Messages'/>
+                <NavA path='/news' title='News'/>
+                <NavA path='/music' title='Music'/>
+                <NavA path='/settings' title='Settings'/>
           </ul>
           </nav>
     )

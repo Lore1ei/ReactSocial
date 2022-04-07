@@ -3,10 +3,14 @@ import Post from './posts/Post';
 
 const Myposts = () => {
 
-    let mypostsData = [
-        {id: 1, message: 'Hello', countlike: 11},
-        {id: 2, message: 'Holla', countlike: 23},
-    ]
+    let posts = [
+        {id: 1, message: 'Hello', countLike: 11},
+        {id: 2, message: 'Holla', countLike: 23},
+        {id: 3, message: 'Hi', countLike: 13},
+        {id: 4, message: 'Nice', countLike: 232},
+    ];
+
+    let postsElements = posts.map(p => <Post message={p.message} countLike={p.countLike}/>)
 
     return(
               <div className={profile.posts}>
@@ -20,9 +24,8 @@ const Myposts = () => {
                     </div>
                 </div>
 
-                <div className={profile.posts__form}>
-                  <Post message={mypostsData[0].message} countlike={mypostsData[0].countlike}/>
-                  <Post message={mypostsData[1].message} countlike={mypostsData[1].countlike}/>
+                <div className={profile.posts_form}>
+                    { postsElements }
                 </div>
               </div>
     )

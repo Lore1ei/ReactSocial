@@ -7,7 +7,7 @@ const Post = (props) => {
       <img src="https://shapka-youtube.ru/wp-content/uploads/2021/02/avatarka-dlya-skaypa-dlya-parney.jpg" alt="" />
         {props.message}
         <div>
-          <span>Like: {props.countlike}</span>
+          <span>Like: {props.countLike}</span>
         </div>
       </div>
     )

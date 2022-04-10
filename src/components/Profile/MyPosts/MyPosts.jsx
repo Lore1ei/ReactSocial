@@ -3,7 +3,7 @@ import Post from './posts/Post';
 
 const Myposts = (props) => {
 
-    let postsElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike}/>)
+    let postsElements = props.post.map(p => <Post message={p.message} countLike={p.countLike}/>)
 
     return(
               <div className={profile.posts}>

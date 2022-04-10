@@ -12,7 +12,7 @@ const Profile = (props) => {
           </div>
 
           <Avadescr name='Alexandr' secondName='Nesterok'/>
-          <Myposts posts={props.posts}/>
+          <Myposts post={props.post}/>
         </div>  
     )
 }

@@ -31,7 +31,7 @@ let posts = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <App dialogs={dialogs} messages={messages} posts={posts}/>
+    <App dialogs={dialogs} messages={messages} post={posts}/>
   </React.StrictMode>, 
   document.getElementById('root')
 );

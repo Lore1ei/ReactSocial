@@ -1,16 +1,9 @@
 import profile from './MyPosts.module.css';
 import Post from './posts/Post';
 
-const Myposts = () => {
+const Myposts = (props) => {
 
-    let posts = [
-        {id: 1, message: 'Hello', countLike: 11},
-        {id: 2, message: 'Holla', countLike: 23},
-        {id: 3, message: 'Hi', countLike: 13},
-        {id: 4, message: 'Nice', countLike: 232},
-    ];
-
-    let postsElements = posts.map(p => <Post message={p.message} countLike={p.countLike}/>)
+    let postsElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike}/>)
 
     return(
               <div className={profile.posts}>

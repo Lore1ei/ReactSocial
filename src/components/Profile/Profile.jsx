@@ -3,7 +3,8 @@ import Myposts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
 
 
-const Profile = () => {
+const Profile = (props) => {
+
     return(
         <div>
           <div className="content_first_img">
@@ -11,7 +12,7 @@ const Profile = () => {
           </div>
 
           <Avadescr name='Alexandr' secondName='Nesterok'/>
-          <Myposts />
+          <Myposts posts={props.posts}/>
         </div>  
     )
 }

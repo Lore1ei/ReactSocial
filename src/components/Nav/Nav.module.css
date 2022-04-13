@@ -25,3 +25,36 @@
 .nav .ul a.active{
   color: red ;
 }
+
+.friendsWrap{
+  margin-top: 60px;
+}
+
+.friendsTitle{
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.friends{
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.friendItem{
+  text-align: center;
+}
+
+.friendImg{
+  width: 44px;
+  height: 44px;
+  margin: auto;
+}
+
+.friendImg img{
+  width: 44px;
+  height: 44px;
+  margin: auto;
+}

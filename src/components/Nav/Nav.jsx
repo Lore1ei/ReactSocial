@@ -1,25 +1,21 @@
 import s from './Nav.module.css';
-import {NavLink} from "react-router-dom";
+import NavA from './Navlink'
+import Friends from "./Friends/Friends";
 
-const NavA = (props) => {
-  return(
-      <li>
-          <NavLink className= { navData => navData.isActive ? s.active : s.item } to={props.path} activeclassname={s.active}>{props.title}</NavLink>
-      </li>
-  );
-}
 
-const Nav = () => {
+const Nav = (props) => {
+
+    let NavAdate = props.state.nav.map( n => <NavA path={n.path} title={n.title}/> )
+
     return(
-        <nav className={s.nav}>
+        <div className={s.nav}>
+        <nav>
           <ul className={s.ul}>
-                <NavA path='/' title='Profile'/>
-                <NavA path='/dialogs' title='Messages'/>
-                <NavA path='/news' title='News'/>
-                <NavA path='/music' title='Music'/>
-                <NavA path='/settings' title='Settings'/>
+              { NavAdate }
           </ul>
           </nav>
+            <Friends state={props.state}/>
+        </div>
     )
 }
 

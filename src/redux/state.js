@@ -17,14 +17,28 @@ let state = {
             {id: 6, message: 'Hello'},
         ],
         dialogs: [
-            {path: 1, name: 'Alexandr', message: 'Hello'},
-            {path: 2, name: 'Oleg', message: 'Hi, How are you today?'},
-            {path: 3, name: 'Igor', message: 'Nice to meet you!'},
-            {path: 4, name: 'Andrey', message: 'Hello'},
-            {path: 5, name: 'Svetlana', message: 'Hello'},
-            {path: 6, name: 'Artyom', message: 'Hello'},
+            {path: 1, name: 'Alexandr', message: 'Hello', img: '/img/1.jpg'},
+            {path: 2, name: 'Oleg', message: 'Hi, How are you today?', img: '/img/2.jpg'},
+            {path: 3, name: 'Igor', message: 'Nice to meet you!', img: '/img/3.jpg'},
+            {path: 4, name: 'Andrey', message: 'Hello', img: '/img/4.jpg'},
+            {path: 5, name: 'Svetlana', message: 'Hello', img: '/img/5.jpg'},
+            {path: 6, name: 'Artyom', message: 'Hello', img: '/img/6.jpg'},
         ],
-    }
+    },
+    navBar: {
+        nav: [
+            {path: '/', title: 'Profile'},
+            {path: '/dialogs', title: 'Messages'},
+            {path: '/news', title: 'News'},
+            {path: '/music', title: 'Music'},
+            {path: '/settings', title: 'Settings'},
+        ],
+        friends: [
+            {img: '/img/1.jpg', name: 'Alex'},
+            {img: '/img/2.jpg', name: 'Andrew'},
+            {img: '/img/3.jpg', name: 'Asuka'},
+        ],
+    },
 
 }
 

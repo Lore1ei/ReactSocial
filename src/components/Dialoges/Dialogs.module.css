@@ -13,7 +13,8 @@
     color: #444444;
     margin-bottom: 4px;
     font-size: 18px;
-    display: block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
 
@@ -31,4 +32,16 @@
     border-radius: 4px;
     padding: 6px;
     margin-bottom: 8px;
+}
+
+.img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 6px;
+    border: 1px solid transparent;
+}
+
+.active .img{
+    border: 1px solid red;
 }

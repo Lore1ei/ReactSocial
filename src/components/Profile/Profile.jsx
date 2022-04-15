@@ -2,7 +2,6 @@ import Avadescr from './AvaDescription/Avadescr';
 import Myposts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
 
-
 const Profile = (props) => {
     return(
         <div>

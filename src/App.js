@@ -14,7 +14,7 @@ const App = (props) => {
 
 
     return (
-    <BrowserRouter>
+
         <div className='app-wrapper'>
             <Header/>
             <Nav state={props.state.navBar} />
@@ -28,7 +28,7 @@ const App = (props) => {
                 </Routes>
             </div>
         </div>
-        </BrowserRouter>
+
     );
 }
 

@@ -1,18 +1,27 @@
 import profile from './MyPosts.module.css';
+import React from "react";
 import Post from './posts/Post';
 
 const Myposts = (props) => {
 
     let postsElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike}/>)
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text)
+    }
+
     return(
               <div className={profile.posts}>
                 <div className={profile.name_post}>My posts</div>
                 <div className={profile.new_post}>
                     <div className="">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea ref={newPostElement} name="" id="" cols="30" rows="10"></textarea>
                     </div>
                     <div className="">
-                        <button>Push message</button>
+                        <button onClick={addPost}>Push message</button>
                     </div>
                 </div>
 

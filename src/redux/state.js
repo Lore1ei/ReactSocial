@@ -39,7 +39,17 @@ let state = {
             {img: '/img/3.jpg', name: 'Asuka'},
         ],
     },
-
 }
+
+export let addPost = (postMessage) =>{
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        countLike: 0,
+    };
+
+    state.profilePage.posts.push(newPost);
+}
+
 
 export default state;

@@ -1,10 +1,9 @@
-import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {renderEntireTree} from "./render";
-import state, {addPost, ChangePostText} from "./redux/state";
+import state, {addMessageDialog, addPost, ChangeDialogText, ChangePostText} from "./redux/state";
 
-renderEntireTree(state, addPost, ChangePostText);
+renderEntireTree(state, addPost, ChangePostText, addMessageDialog, ChangeDialogText);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

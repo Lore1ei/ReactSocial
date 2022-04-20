@@ -19,6 +19,7 @@ let state = {
             {id: 5, message: 'Hello'},
             {id: 6, message: 'Hello'},
         ],
+        newPost: '',
         dialogs: [
             {path: 1, name: 'Alexandr', message: 'Hello', img: '/img/1.jpg'},
             {path: 2, name: 'Oleg', message: 'Hi, How are you today?', img: '/img/2.jpg'},
@@ -53,13 +54,29 @@ export let addPost = () =>{
 
     state.profilePage.posts.push(newPost);
     state.profilePage.newPost = '';
-    renderEntireTree(state, addPost, ChangePostText);
+    renderEntireTree(state, addPost, ChangePostText, addMessageDialog, ChangeDialogText);
 }
 
 export let ChangePostText = (newText) => {
     state.profilePage.newPost = newText;
-    renderEntireTree(state, addPost, ChangePostText);
+    renderEntireTree(state, addPost, ChangePostText, addMessageDialog, ChangeDialogText);
 }
+
+export let addMessageDialog = () => {
+    let newPost = {
+        id: 7,
+        message: state.dialogsPage.newPost,
+    }
+    state.dialogsPage.messages.push(newPost);
+    state.dialogsPage.newPost = '';
+    renderEntireTree(state, addPost, ChangePostText, addMessageDialog, ChangeDialogText);
+}
+
+export let ChangeDialogText = (newText) => {
+    state.dialogsPage.newPost = newText;
+    renderEntireTree(state, addPost, ChangePostText, addMessageDialog, ChangeDialogText);
+}
+
 window.state = state;
 
 export default state;

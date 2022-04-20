@@ -5,11 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 
-export let renderEntireTree = (state, addPost, ChangePostText) =>{
+export let renderEntireTree = (state, addPost, ChangePostText, addMessageDialog, ChangeDialogText) =>{
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} addPost={addPost} ChangePostText={ChangePostText}/>
+                <App state={state} addPost={addPost} ChangePostText={ChangePostText} addMessageDialog={addMessageDialog} ChangeDialogText={ChangeDialogText}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

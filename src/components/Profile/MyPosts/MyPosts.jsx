@@ -10,7 +10,9 @@ const Myposts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        if(newPostElement.current.value.length >= 1){
+            props.addPost();
+        }
     }
 
     let onPostChange = () => {

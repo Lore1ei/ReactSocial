@@ -11,7 +11,9 @@ const Dialogs = (props) => {
     let ref = React.createRef();
 
     let addMessage = () => {
-        props.addMessageDialog();
+        if(ref.current.value.length >= 1){
+            props.addMessageDialog();
+        }
     };
 
     let dialogOnChange = () => {

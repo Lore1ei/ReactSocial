@@ -43,42 +43,44 @@ let store = {
             ],
         },
     },
-    getState(){
-      return this._state;
-    },
     _callSubscriber ()  {
         console.log('state');
     },
-    addPost () {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPost,
-            countLike: 0,
-        };
 
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPost = '';
-        this._callSubscriber(this._state);
-    },
-    ChangePostText (newText) {
-        this._state.profilePage.newPost = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessageDialog  ()  {
-        let newPost = {
-            id: 7,
-            message: this._state.dialogsPage.newPost,
-        }
-        this._state.dialogsPage.messages.push(newPost);
-        this._state.dialogsPage.newPost = '';
-        this._callSubscriber(this._state);
-    },
-    ChangeDialogText (newText) {
-        this._state.dialogsPage.newPost = newText;
-        this._callSubscriber(this._state);
+    getState(){
+      return this._state;
     },
     subscribe (observer){
         this._callSubscriber = observer;
+    },
+
+    dispatch(action){
+
+        if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPost,
+                countLike: 0,
+            };
+
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPost = '';
+            this._callSubscriber(this._state);
+        }else if (action.type === 'CHANGE-POST-TEXT'){
+            this._state.profilePage.newPost = action.newText;
+            this._callSubscriber(this._state);
+        }else if (action.type === 'ADD-MESSAGE-DIALOG'){
+            let newPost = {
+                id: 7,
+                message: this._state.dialogsPage.newPost,
+            }
+            this._state.dialogsPage.messages.push(newPost);
+            this._state.dialogsPage.newPost = '';
+            this._callSubscriber(this._state);
+        }else if(action.type === 'CHANGE-DIALOG-TEXT'){
+            this._state.dialogsPage.newPost = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
 

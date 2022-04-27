@@ -12,13 +12,14 @@ const Dialogs = (props) => {
 
     let addMessage = () => {
         if(ref.current.value.length >= 1){
-            props.addMessageDialog();
+            props.dispatch({type: 'ADD-MESSAGE-DIALOG'});
         }
     };
 
     let dialogOnChange = () => {
         let text = ref.current.value;
-        props.ChangeDialogText(text);
+        let newVar = {type: 'CHANGE-DIALOG-TEXT', newText: text};
+        props.dispatch(newVar);
     }
 
     return (

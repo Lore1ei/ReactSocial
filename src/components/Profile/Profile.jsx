@@ -13,8 +13,7 @@ const Profile = (props) => {
           <Avadescr name='Alexandr' secondName='Nesterok'/>
           <Myposts posts={props.profilePage.posts}
                    newPost={props.profilePage.newPost}
-                   addPost={props.addPost}
-                   ChangePostText={props.ChangePostText}/>
+                   dispatch={props.dispatch}/>
         </div>  
     )
 }

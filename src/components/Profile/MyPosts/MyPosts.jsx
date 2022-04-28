@@ -1,6 +1,7 @@
 import profile from './MyPosts.module.css';
 import React from "react";
 import Post from './posts/Post';
+import {addPostActionCreator, changePostTextActionCreator} from "../../../redux/state";
 
 
 const Myposts = (props) => {
@@ -12,14 +13,14 @@ const Myposts = (props) => {
     let addPost = () => {
         if(newPostElement.current.value.length >= 1){
             // props.addPost();
-            props.dispatch({type: 'ADD-POST'});
+            props.dispatch(addPostActionCreator());
         }
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
         // props.ChangePostText(text);
-        props.dispatch({type: 'CHANGE-POST-TEXT', newText: text});
+        props.dispatch(changePostTextActionCreator(text));
     }
 
     return(
@@ -30,7 +31,7 @@ const Myposts = (props) => {
                         <textarea ref={newPostElement} name="" id="" cols="30" rows="5" onChange={onPostChange} value={props.newPost}/>
                     </div>
                     <div className="">
-                        <button onClick={addPost}>Push message</button>
+                        <button className={profile.btn} onClick={addPost}>Push message</button>
                     </div>
                 </div>
 

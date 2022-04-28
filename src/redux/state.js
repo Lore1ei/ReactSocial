@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const CHANGE_POST_TEXT = 'CHANGE-POST-TEXT';
+const ADD_MESSAGE_DIALOG = 'ADD-MESSAGE-DIALOG';
+const CHANGE_DIALOG_TEXT = 'CHANGE-DIALOG-TEXT';
+
 let store = {
     _state : {
         profilePage: {
@@ -56,7 +61,7 @@ let store = {
 
     dispatch(action){
 
-        if (action.type === 'ADD-POST'){
+        if (action.type === ADD_POST){
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPost,
@@ -66,10 +71,10 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPost = '';
             this._callSubscriber(this._state);
-        }else if (action.type === 'CHANGE-POST-TEXT'){
+        }else if (action.type === CHANGE_POST_TEXT){
             this._state.profilePage.newPost = action.newText;
             this._callSubscriber(this._state);
-        }else if (action.type === 'ADD-MESSAGE-DIALOG'){
+        }else if (action.type === ADD_MESSAGE_DIALOG){
             let newPost = {
                 id: 7,
                 message: this._state.dialogsPage.newPost,
@@ -77,13 +82,20 @@ let store = {
             this._state.dialogsPage.messages.push(newPost);
             this._state.dialogsPage.newPost = '';
             this._callSubscriber(this._state);
-        }else if(action.type === 'CHANGE-DIALOG-TEXT'){
+        }else if(action.type === CHANGE_DIALOG_TEXT){
             this._state.dialogsPage.newPost = action.newText;
             this._callSubscriber(this._state);
         }
     }
 }
 
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const changePostTextActionCreator = (text) => ({type: CHANGE_POST_TEXT, newText: text})
+
+export const AddMessageDialogActionCreator = () => ({type: ADD_MESSAGE_DIALOG})
+
+export const ChangeDialogTextActionCreator = (text) => ({type: CHANGE_DIALOG_TEXT, newText: text})
 
 window.store = store;
 

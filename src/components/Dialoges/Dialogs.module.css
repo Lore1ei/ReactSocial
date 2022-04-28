@@ -49,4 +49,23 @@
 textarea{
     display: block;
     margin-bottom: 10px;
+    border: 1px solid #d4d4d4;
+    width: 312px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.btn{
+    border: none;
+    background: linear-gradient(90deg, rgba(40,44,82,1) 18%, rgba(0,212,255,1) 100%, rgba(2,0,36,1) 100%);
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    color: #fff;
+    transition: all 0.4s;
+    border-radius: 4px;
+}
+
+.btn:hover{
+    background-position: 160px;
 }

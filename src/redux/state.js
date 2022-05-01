@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const CHANGE_POST_TEXT = 'CHANGE-POST-TEXT';
-const ADD_MESSAGE_DIALOG = 'ADD-MESSAGE-DIALOG';
-const CHANGE_DIALOG_TEXT = 'CHANGE-DIALOG-TEXT';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
 
 let store = {
     _state : {
@@ -61,42 +60,12 @@ let store = {
 
     dispatch(action){
 
-        if (action.type === ADD_POST){
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPost,
-                countLike: 0,
-            };
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.navBar = navbarReducer(this._state.navBar, action);
+        this._callSubscriber(this._state);
 
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPost = '';
-            this._callSubscriber(this._state);
-        }else if (action.type === CHANGE_POST_TEXT){
-            this._state.profilePage.newPost = action.newText;
-            this._callSubscriber(this._state);
-        }else if (action.type === ADD_MESSAGE_DIALOG){
-            let newPost = {
-                id: 7,
-                message: this._state.dialogsPage.newPost,
-            }
-            this._state.dialogsPage.messages.push(newPost);
-            this._state.dialogsPage.newPost = '';
-            this._callSubscriber(this._state);
-        }else if(action.type === CHANGE_DIALOG_TEXT){
-            this._state.dialogsPage.newPost = action.newText;
-            this._callSubscriber(this._state);
-        }
     }
 }
-
-export const addPostActionCreator = () => ({type: ADD_POST})
-
-export const changePostTextActionCreator = (text) => ({type: CHANGE_POST_TEXT, newText: text})
-
-export const AddMessageDialogActionCreator = () => ({type: ADD_MESSAGE_DIALOG})
-
-export const ChangeDialogTextActionCreator = (text) => ({type: CHANGE_DIALOG_TEXT, newText: text})
-
-window.store = store;
 
 export default store;

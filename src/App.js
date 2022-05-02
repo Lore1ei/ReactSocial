@@ -11,13 +11,11 @@ import Settings from "./components/Settings/Settings";
 
 
 const App = (props) => {
-
-
     return (
-
         <div className='app-wrapper'>
             <Header/>
             <Nav state={props.state.navBar} />
+
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path='/' element={<Profile profilePage={props.state.profilePage}

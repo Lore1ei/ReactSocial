@@ -1,3 +1,5 @@
+Проект был сделан для тренировки написания своего редакса и дальнейшего его подключения.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

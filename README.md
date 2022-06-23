@@ -1,4 +1,4 @@
-Проект был сделан для тренировки написания своего редакса и дальнейшего его подключения.
+42AQppKhjug76v566i6NLD8PHi2rbVqrjCMw4GfwmYNEjUEcxFK9ui6adEw8B1ApdPVwGD1JH2wEwKRDutyLsSHsSTZW48H
 
 # Getting Started with Create React App
 
